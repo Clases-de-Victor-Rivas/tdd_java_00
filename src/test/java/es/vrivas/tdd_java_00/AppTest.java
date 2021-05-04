@@ -46,7 +46,8 @@ public class AppTest {
     @Test
     public void iniciaEquipos() {
         System.out.println( "Test iniciaEquipos" );
-        assertArrayEquals(App.getEquipos(), equipos );
+        App.iniciaEquipos();
+        assertEquals(App.getEquipos()[0].getNombre(), equipos[0].getNombre() );
     }
     
 }
