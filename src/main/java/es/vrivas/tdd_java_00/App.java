@@ -23,6 +23,14 @@ public class App {
         }
     }
     
+    // Muestra los equipos
+    public static void muestraEquipos( String cabecera ) {
+        System.out.println( cabecera );
+        for( int i=0; i<MAX_EQUIPOS; ++i ) {
+            System.out.println( equipos[i].toString() );
+        }    
+    }
+    
     // Devuelve el vector de equipos
     public static Equipo[] getEquipos() {
         return equipos;
@@ -30,10 +38,10 @@ public class App {
     
     /**
      * Main function
-     * @return  0 si todo va bien, otro valor si hay problemas.
      */
-    public static int main() {
-        System.out.println( "Inicio ejecución del programa." );
-        return 0;
+    public static void main(String[] args) {
+    System.out.println( "Inicio ejecución del programa." );
+        iniciaEquipos();
+        muestraEquipos("");
     }
 }

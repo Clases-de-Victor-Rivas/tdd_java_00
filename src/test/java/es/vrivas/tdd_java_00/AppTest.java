@@ -36,12 +36,6 @@ public class AppTest {
     }
 
     @Test
-    public void main() {
-        System.out.println( "Test App.main");
-        assertEquals( App.main(), 0 );
-    }
-    
-    @Test
     public void iniciaEquipos() {
         System.out.println( "Test iniciaEquipos" );
         App.iniciaEquipos();
@@ -50,6 +44,7 @@ public class AppTest {
         
         // Comparo usando mejor toString de los objetos.
         assertEquals(App.getEquipos()[0].toString(), equipos[0].toString() );
+        assertEquals(App.getEquipos()[App.MAX_EQUIPOS-1].toString(), equipos[App.MAX_EQUIPOS-1].toString() );
         
     }
     
