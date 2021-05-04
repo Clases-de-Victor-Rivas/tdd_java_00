@@ -17,6 +17,8 @@ import static org.junit.Assert.*;
  * @author vrivas
  */
 public class EquipoTest {
+    private static Equipo e=null;
+    private static String NOMBRE_01="Recreativo de Huelva";
     
     public EquipoTest() {
     }
@@ -24,6 +26,7 @@ public class EquipoTest {
     @BeforeClass
     public static void setUpClass() {
         System.out.println( "setUpClass");
+        e=new Equipo(NOMBRE_01);
     }
     
     @AfterClass
@@ -38,14 +41,14 @@ public class EquipoTest {
     
     @After
     public void tearDown() {
-        System.out.println( "setUp");
+        System.out.println( "tearDown");
     }
 
     @Test
-    public void testSomeMethod() {
-        System.out.println( "testSomeMethod");
+    public void constructor() {
+        System.out.println( "constructor");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals( e.getNombre(), NOMBRE_01 );
     }
     
 }
