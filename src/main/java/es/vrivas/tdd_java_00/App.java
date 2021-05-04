@@ -24,10 +24,10 @@ public class App {
     }
     
     // Muestra los equipos
-    public static void muestraEquipos( String cabecera ) {
+    public static void muestraEquipos( String cabecera, String prefijo ) {
         System.out.println( cabecera );
         for( int i=0; i<MAX_EQUIPOS; ++i ) {
-            System.out.println( equipos[i].toString() );
+            System.out.println( prefijo+equipos[i].toString() );
         }    
     }
     
@@ -42,6 +42,6 @@ public class App {
     public static void main(String[] args) {
     System.out.println( "Inicio ejecución del programa." );
         iniciaEquipos();
-        muestraEquipos("");
+        muestraEquipos("", "   ");
     }
 }
