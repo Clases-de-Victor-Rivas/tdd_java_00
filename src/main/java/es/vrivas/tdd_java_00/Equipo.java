@@ -44,11 +44,13 @@ public class Equipo {
     /**
      * Setter 
      * @param nuevoNombre 
+     * @return Referencia al objeto para encadenar métodos
      */
-    public void setNombre( String nuevoNombre ) {
+    public Equipo setNombre( String nuevoNombre ) {
         if( nuevoNombre!=null && nuevoNombre!="" ) {
             nombre=nuevoNombre;
         }
+        return this;
     }
     
     /**
@@ -62,11 +64,13 @@ public class Equipo {
     /**
      * Setter
      * @param nuevosPuntos
+     * @return Referencia al objeto para encadenar métodos
      */
-    public void setPuntos( int nuevosPuntos ) {
+    public Equipo setPuntos( int nuevosPuntos ) {
         if( nuevosPuntos>=0 && nuevosPuntos<=MAX_PUNTOS ) {
             puntos=nuevosPuntos;
         }
+        return this;
     }
     
  }
