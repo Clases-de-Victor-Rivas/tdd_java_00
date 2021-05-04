@@ -45,7 +45,6 @@ public class AppTest {
         // Comparo usando mejor toString de los objetos.
         assertEquals(App.getEquipos()[0].toString(), equipos[0].toString() );
         assertEquals(App.getEquipos()[App.MAX_EQUIPOS-1].toString(), equipos[App.MAX_EQUIPOS-1].toString() );
-        
     }
     
 }
