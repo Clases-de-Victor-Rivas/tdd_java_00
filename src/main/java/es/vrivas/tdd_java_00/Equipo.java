@@ -22,4 +22,11 @@ public class Equipo {
         this.nombre=nombre;
     }
     
+    /**
+     * Getter
+     * @return nombre 
+     */
+    public String getNombre() {
+        return nombre;
+    }
 }
