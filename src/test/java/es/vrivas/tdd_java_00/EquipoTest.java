@@ -91,5 +91,12 @@ public class EquipoTest {
     }
     
     
+    @Test
+    public void testToString() {
+        System.out.println( "Equipo.toString");
+        String cadena="Nombre: "+NOMBRE_01+", Puntos: "+PUNTOS_01;
+        assertEquals( e.toString(), cadena );
+    }
+    
     
 }

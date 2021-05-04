@@ -28,8 +28,6 @@ public class AppTest {
         // Mock data
         for( int i=0; i<App.MAX_EQUIPOS; ++i ) {
             equipos[i]=new Equipo( "Equipo "+(i+1), 0 );
-            System.out.println( equipos[i]);
-
         }
     }
     
@@ -48,6 +46,11 @@ public class AppTest {
         System.out.println( "Test iniciaEquipos" );
         App.iniciaEquipos();
         assertEquals(App.getEquipos()[0].getNombre(), equipos[0].getNombre() );
+        assertEquals(App.getEquipos()[0].getPuntos(), equipos[0].getPuntos() );
+        
+        // Comparo usando mejor toString de los objetos.
+        assertEquals(App.getEquipos()[0].toString(), equipos[0].toString() );
+        
     }
     
 }

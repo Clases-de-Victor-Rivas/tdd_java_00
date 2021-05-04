@@ -73,4 +73,13 @@ public class Equipo {
         return this;
     }
     
+    /**
+     * Devuelve los datos del objeto en formato de cadena
+     * @return Una cadena con los datos del objeto.
+     */
+    @Override
+    public String toString() {
+        return "Nombre: "+nombre+
+                ", Puntos: "+puntos;
+    }
  }
