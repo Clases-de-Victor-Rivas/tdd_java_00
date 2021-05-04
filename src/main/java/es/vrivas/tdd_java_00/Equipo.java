@@ -31,7 +31,7 @@ public class Equipo {
     }
     
     public void setNombre( String nuevoNombre ) {
-        if( nuevoNombre!="" ) {
+        if( nuevoNombre!=null && nuevoNombre!="" ) {
             nombre=nuevoNombre;
         }
     }
