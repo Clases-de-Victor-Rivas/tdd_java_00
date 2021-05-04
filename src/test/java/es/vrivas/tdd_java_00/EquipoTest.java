@@ -55,15 +55,22 @@ public class EquipoTest {
     @Test
     public void setNombre() {
         System.out.println( "setNombre");
+        
+        // Pruebo valores no válidos
         e.setNombre("");
         assertNotEquals( e.getNombre(), "" );
         e.setNombre(null);
-        assertNotEquals( e.getNombre(), null );       
+        assertNotEquals( e.getNombre(), null );  
+        
+        // Pruebo que devuelve this para encadenar métodos
+        assertSame( e.setNombre(NOMBRE_01), e);
     }
     
     @Test
     public void setPuntos() {
         System.out.println( "setPuntos");
+        
+        // Pruebo que detecta bien los valores no válidos
         e.setPuntos(-1);
         assertNotEquals( e.getPuntos(), -1 );
         e.setPuntos( Equipo.MAX_PUNTOS+1 );
@@ -78,6 +85,9 @@ public class EquipoTest {
         assertEquals( e.getPuntos(), Equipo.MAX_PUNTOS-1 );
         e.setPuntos( Equipo.MAX_PUNTOS );
         assertEquals( e.getPuntos(), Equipo.MAX_PUNTOS );
+        
+        // Pruebo que devuelve this para encadenar métodos
+        assertSame( e.setPuntos(PUNTOS_01), e);
     }
     
     
