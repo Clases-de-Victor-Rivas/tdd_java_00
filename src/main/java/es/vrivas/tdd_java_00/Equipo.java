@@ -31,6 +31,8 @@ public class Equipo {
     }
     
     public void setNombre( String nuevoNombre ) {
-        nombre=nuevoNombre;
+        if( nuevoNombre!="" ) {
+            nombre=nuevoNombre;
+        }
     }
 }
