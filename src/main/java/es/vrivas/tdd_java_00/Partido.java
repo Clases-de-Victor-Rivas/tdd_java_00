@@ -56,13 +56,9 @@ public class Partido {
         // Gana local
         if( golesLocal>golesVisitante ) {
             local.setPuntos(local.getPuntos()+3);
-        }
-        
-        if( golesLocal<golesVisitante ) {
+        } else  if( golesLocal<golesVisitante ) {
             visitante.setPuntos(visitante.getPuntos()+3);
-        }
-
-        if( golesLocal==golesVisitante ) {
+        } else{
             visitante.setPuntos(visitante.getPuntos()+1);
             local.setPuntos(local.getPuntos()+1);
         }       
