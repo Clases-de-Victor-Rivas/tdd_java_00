@@ -54,6 +54,7 @@ public class EquipoTest {
     @Test
     public void setNombre() {
         System.out.println( "setNombre");
-        asserEquals( e.setNombre(""), "" );
+        e.setNombre("");
+        assertNotEquals( e.getNombre(), "" );
     }
 }

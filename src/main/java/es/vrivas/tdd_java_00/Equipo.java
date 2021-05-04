@@ -29,4 +29,8 @@ public class Equipo {
     public String getNombre() {
         return nombre;
     }
+    
+    public void setNombre( String nuevoNombre ) {
+        nombre=nuevoNombre;
+    }
 }
