@@ -53,7 +53,18 @@ public class PartidoTest {
         
         // compruebo la victoria local
         p.estableceResultado( 3, 2 );
-        assertEquals( p.getLocal().getPuntos(), LOCAL_PTOS_INICIALES+3);
+        assertEquals( p.getLocal().getPuntos(), LOCAL_PTOS_INICIALES+3 );
+        assertEquals( p.getVisitante().getPuntos(), VISITANTE_PTOS_INICIALES );
         
+        
+        // compruebo la victoria visitante
+        p.estableceResultado( 1, 5 );
+        assertEquals( p.getLocal().getPuntos(), LOCAL_PTOS_INICIALES+3);
+        assertEquals( p.getVisitante().getPuntos(), VISITANTE_PTOS_INICIALES+3 );
+        
+        // compruebo el empate
+        p.estableceResultado( 3, 3 );
+        assertEquals( p.getLocal().getPuntos(), LOCAL_PTOS_INICIALES+3+1);
+        assertEquals( p.getVisitante().getPuntos(), VISITANTE_PTOS_INICIALES+3+1 );
     }
 }

@@ -57,6 +57,15 @@ public class Partido {
         if( golesLocal>golesVisitante ) {
             local.setPuntos(local.getPuntos()+3);
         }
+        
+        if( golesLocal<golesVisitante ) {
+            visitante.setPuntos(visitante.getPuntos()+3);
+        }
+
+        if( golesLocal==golesVisitante ) {
+            visitante.setPuntos(visitante.getPuntos()+1);
+            local.setPuntos(local.getPuntos()+1);
+        }       
     }
     /**
      * Constructor
