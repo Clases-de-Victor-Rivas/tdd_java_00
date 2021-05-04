@@ -56,5 +56,7 @@ public class EquipoTest {
         System.out.println( "setNombre");
         e.setNombre("");
         assertNotEquals( e.getNombre(), "" );
+        e.setNombre(null);
+        assertNotEquals( e.getNombre(), null );       
     }
 }
