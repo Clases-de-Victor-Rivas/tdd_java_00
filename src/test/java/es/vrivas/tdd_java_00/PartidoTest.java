@@ -19,13 +19,17 @@ public class PartidoTest {
     static Equipo local=null;
     static Equipo visitante=null;
     
+    static final int LOCAL_PTOS_INICIALES = 11;
+    static final int VISITANTE_PTOS_INICIALES = 11;
+    
+    
     public PartidoTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        local=new Equipo( "LOCAL 01", 11 );
-        visitante=new Equipo( "VISITANTE 02", 22 );
+        local=new Equipo( "LOCAL 01", LOCAL_PTOS_INICIALES );
+        visitante=new Equipo( "VISITANTE 02", VISITANTE_PTOS_INICIALES );
     }
     
     @AfterClass
@@ -40,7 +44,16 @@ public class PartidoTest {
         // Compruebo que el constructor funciona bien
         assertSame( p.getLocal(), local );
         assertSame( p.getVisitante(), visitante );
-        
+        assertEquals( p.getGolesLocal(), Partido.GOLES_NULOS );       
     }
     
+    @Test
+    public void estableceResultado() {
+        System.out.println( "Establece resultado de Partido" );
+        
+        // compruebo la victoria local
+        p.estableceResultado( 3, 2 );
+        assertEquals( p.getLocal().getPuntos(), LOCAL_PTOS_INICIALES+3);
+        
+    }
 }
