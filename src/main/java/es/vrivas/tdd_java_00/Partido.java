@@ -53,15 +53,8 @@ public class Partido {
         this.golesLocal=golesLocal;
         this.golesVisitante=golesVisitante;
         
-        // Gana local
-        if( golesLocal>golesVisitante ) {
-            local.setPuntos(local.getPuntos()+3);
-        } else  if( golesLocal<golesVisitante ) {
-            visitante.setPuntos(visitante.getPuntos()+3);
-        } else{
-            visitante.setPuntos(visitante.getPuntos()+1);
-            local.setPuntos(local.getPuntos()+1);
-        }       
+        local.setPuntos(local.getPuntos()+(golesLocal>golesVisitante?3:(golesLocal==golesVisitante?1:0)));
+        visitante.setPuntos(visitante.getPuntos()+(golesLocal<golesVisitante?3:(golesLocal==golesVisitante?1:0)));
     }
     /**
      * Constructor
