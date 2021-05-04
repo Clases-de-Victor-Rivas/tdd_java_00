@@ -11,4 +11,15 @@ package es.vrivas.tdd_java_00;
  */
 public class Equipo {
     
+    // Nombre del equipo
+    String nombre;
+    
+    /**
+     * Constructor
+     * @param nombre Nombre del equipo
+     */
+    public Equipo( String nombre ) {
+        this.nombre=nombre;
+    }
+    
 }
