@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
 public class EquipoTest {
     private static Equipo e=null;
     private static String NOMBRE_01="Recreativo de Huelva";
+    private static int PUNTOS_01=12;
     
     public EquipoTest() {
     }
@@ -26,7 +27,7 @@ public class EquipoTest {
     @BeforeClass
     public static void setUpClass() {
         System.out.println( "setUpClass");
-        e=new Equipo(NOMBRE_01);
+        e=new Equipo(NOMBRE_01, PUNTOS_01);
     }
     
     @AfterClass
@@ -47,8 +48,8 @@ public class EquipoTest {
     @Test
     public void constructor() {
         System.out.println( "constructor");
-        // TODO review the generated test code and remove the default call to fail.
         assertEquals( e.getNombre(), NOMBRE_01 );
+        assertEquals( e.getPuntos(), PUNTOS_01 );
     }
     
     @Test
@@ -59,4 +60,26 @@ public class EquipoTest {
         e.setNombre(null);
         assertNotEquals( e.getNombre(), null );       
     }
+    
+    @Test
+    public void setPuntos() {
+        System.out.println( "setPuntos");
+        e.setPuntos(-1);
+        assertNotEquals( e.getPuntos(), -1 );
+        e.setPuntos( Equipo.MAX_PUNTOS+1 );
+        assertNotEquals( e.getPuntos(), Equipo.MAX_PUNTOS+1 );
+        
+        // Pruebo valores límite
+        e.setPuntos( 0 );
+        assertEquals( e.getPuntos(), 0 );
+        e.setPuntos( 1 );
+        assertEquals( e.getPuntos(), 1 );
+        e.setPuntos( Equipo.MAX_PUNTOS-1 );
+        assertEquals( e.getPuntos(), Equipo.MAX_PUNTOS-1 );
+        e.setPuntos( Equipo.MAX_PUNTOS );
+        assertEquals( e.getPuntos(), Equipo.MAX_PUNTOS );
+    }
+    
+    
+    
 }

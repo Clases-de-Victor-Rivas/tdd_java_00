@@ -14,12 +14,23 @@ public class Equipo {
     // Nombre del equipo
     String nombre;
     
+    // Puntos que tiene el equipo
+    int puntos;
+    
+    
+    // Máximo número de puntos que puede tener un equipo
+    // Si hay 20 equipos, cada equipo juega 19*2 partidos
+    // Cada partido que gana son 3 puntos
+    static int MAX_PUNTOS = 19*2*3;
     /**
      * Constructor
      * @param nombre Nombre del equipo
+     * @param puntos Puntos que tiene el equipo
      */
-    public Equipo( String nombre ) {
+    public Equipo( String nombre
+        , int puntos ) {
         this.nombre=nombre;
+        this.puntos=puntos;
     }
     
     /**
@@ -30,9 +41,32 @@ public class Equipo {
         return nombre;
     }
     
+    /**
+     * Setter 
+     * @param nuevoNombre 
+     */
     public void setNombre( String nuevoNombre ) {
         if( nuevoNombre!=null && nuevoNombre!="" ) {
             nombre=nuevoNombre;
         }
     }
-}
+    
+    /**
+     * Getter
+     * @return puntos
+     */
+    public int getPuntos() {
+        return puntos;
+    }
+    
+    /**
+     * Setter
+     * @param nuevosPuntos
+     */
+    public void setPuntos( int nuevosPuntos ) {
+        if( nuevosPuntos>=0 && nuevosPuntos<=MAX_PUNTOS ) {
+            puntos=nuevosPuntos;
+        }
+    }
+    
+ }
