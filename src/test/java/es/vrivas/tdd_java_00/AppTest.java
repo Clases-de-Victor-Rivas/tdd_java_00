@@ -5,8 +5,6 @@
  */
 package es.vrivas.tdd_java_00;
 
-import static es.vrivas.tdd_java_00.App.MAX_EQUIPOS;
-import static es.vrivas.tdd_java_00.App.equipos;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
